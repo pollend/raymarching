@@ -1,0 +1,5 @@
+/home/michaelpollind/Documents/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE= -G "CodeBlocks - Unix Makefiles" /home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final
+sourcefiles:/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/src/Actor.cpp;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/src/Renderer.cpp
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final

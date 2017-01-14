@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="assigment_3" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="app">
+         <Option output="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/bin/app" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/qvm/include" />
+            <Add directory="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/6" />
+            <Add directory="/usr/include/c++/6/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/6" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 app" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="app/fast">
+         <Option output="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/bin/app" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/qvm/include" />
+            <Add directory="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/6" />
+            <Add directory="/usr/include/c++/6/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/6" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 app/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/app/app.cpp">
+         <Option target="app"/>
+      </Unit>
+      <Unit filename="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/src/Actor.cpp">
+         <Option target="app"/>
+      </Unit>
+      <Unit filename="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/src/Actor.h">
+         <Option target="app"/>
+      </Unit>
+      <Unit filename="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/src/MathHelper.h">
+         <Option target="app"/>
+      </Unit>
+      <Unit filename="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/src/Renderer.cpp">
+         <Option target="app"/>
+      </Unit>
+      <Unit filename="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/src/Renderer.h">
+         <Option target="app"/>
+      </Unit>
+      <Unit filename="/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>
