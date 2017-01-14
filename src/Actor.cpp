@@ -1,11 +1,11 @@
 //
 // Created by michaelpollind on 1/13/17.
 //
-
 #include "Actor.h"
+#include <boost/qvm/mat_operations.hpp>
+#include <boost/qvm/map_vec_mat.hpp>
 
 Actor::Actor() {
-    _transform = matrix<float>(identity_matrix<float>(4));
     _parent = NULL;
 }
 
@@ -13,27 +13,23 @@ void Actor::SetParent(Actor* parent) {
     _parent = parent;
 }
 
+boost::qvm::mat<float,4,4> Actor::GetTransform() {
+    if(_parent != NULL)
+    {
+        boost::qvm::mat<float,4,4> transform = boost::qvm::mat<float,4,4>();
+        boost::qvm::set_identity(transform);
+        transform =  _parent->GetTransform() * Local;
+        return  transform;
+    }
+    return  Local;
+}
+
 void Actor::Update(float delta) {
 
 }
 
-matrix<float> Actor::GetTransform() {
-    if(_parent != NULL)
-    {
-       // matrix<float> transform= matrix<float>(identity_matrix<float>(4));
-        _transform = prod(_parent->GetTransform(),GetLocalTransform());
-        return  _transform;
-    }
-
-    return  GetLocalTransform();
-}
-
-
-matrix<float> GetLocalTransform()
-{
-    Matrix4x4 lscale = Matrix4x4::Scale(Scale);
-    Matrix4x4 lposition = Matrix4x4::Translation(Position);
-    Matrix4x4 lrotation =Rotation.ConvertToMatrix();
-    return lscale  * lrotation * lposition;
+void Actor::Draw(float delta) {
 
 }
+
+

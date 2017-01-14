@@ -1,3 +1,3 @@
-/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/CMakeFiles/rebuild_cache.dir
-/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/CMakeFiles/edit_cache.dir
-/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/CMakeFiles/app.dir
+/home/michaelpollind/raymarching/CMakeFiles/edit_cache.dir
+/home/michaelpollind/raymarching/CMakeFiles/rebuild_cache.dir
+/home/michaelpollind/raymarching/CMakeFiles/app.dir

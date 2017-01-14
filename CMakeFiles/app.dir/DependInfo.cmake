@@ -4,9 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/app/app.cpp" "/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/CMakeFiles/app.dir/app/app.cpp.o"
-  "/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/src/Actor.cpp" "/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/CMakeFiles/app.dir/src/Actor.cpp.o"
-  "/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/src/Renderer.cpp" "/home/michaelpollind/ownCloud/homework/graphics_interterm/assignment_final/CMakeFiles/app.dir/src/Renderer.cpp.o"
+  "/home/michaelpollind/raymarching/app/app.cpp" "/home/michaelpollind/raymarching/CMakeFiles/app.dir/app/app.cpp.o"
+  "/home/michaelpollind/raymarching/src/Actor.cpp" "/home/michaelpollind/raymarching/CMakeFiles/app.dir/src/Actor.cpp.o"
+  "/home/michaelpollind/raymarching/src/Renderer.cpp" "/home/michaelpollind/raymarching/CMakeFiles/app.dir/src/Renderer.cpp.o"
+  "/home/michaelpollind/raymarching/src/Shaders/Program.cpp" "/home/michaelpollind/raymarching/CMakeFiles/app.dir/src/Shaders/Program.cpp.o"
+  "/home/michaelpollind/raymarching/src/Shaders/Source.cpp" "/home/michaelpollind/raymarching/CMakeFiles/app.dir/src/Shaders/Source.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
