@@ -13,50 +13,65 @@ Program::~Program() {
 }
 
 void Program::_useShader() {
+    if(Program::ActiveProgram == _shader_program)
+        return;
+    Program::ActiveProgram = _shader_program;
     glUseProgram(_shader_program);
 }
 
 void Program::BindShader()
 {
-
+    _useShader();
 }
-static void Program::Unbind()
+ void Program::Unbind()
 {
+    Program::ActiveProgram = 0;
     glUseProgram(0);
 }
 
 void Program::SetAttrib(int index, const GLchar* attrib)
 {
     _useShader();
+    glBindAttribLocation(_shader_program,index,attrib);
 
 }
 
 void Program::SetUniform1(const GLchar* UniformID, GLint value)
 {
-
+    _useShader();
+    glUniform1i(glGetUniformLocation(_shader_program,UniformID),value);
 }
-void Program::SetUniform1(const GLchar* UniformID,GLint value[])
+
+void Program::SetUniform1(const GLchar* UniformID,GLint value[],int size)
 {
-
+    _useShader();
+    glUniform1iv(glGetUniformLocation(_shader_program,UniformID),size,value);
 }
+
 
 void Program::SetUniform1(const GLchar* UniformID, GLfloat value)
 {
-
+    _useShader();
+    glUniform1f(glGetUniformLocation(_shader_program,UniformID),value);
 }
-void Program::SetUniform1(const GLchar* UniformID,const GLfloat value[])
-{
 
+void Program::SetUniform1(const GLchar* UniformID,const GLfloat value[], int size)
+{
+    _useShader();
+    glUniform1fv(glGetUniformLocation(_shader_program,UniformID),size,value);
 }
 
 void Program::SetUniform2(const GLchar* UniformID, boost::qvm::vec<float,2> value)
 {
-
+    _useShader();
+    glUniform2fv(glGetUniformLocation(_shader_program,UniformID),sizeof(value), value.a);
 }
-void Program::SetUniform2(const GLchar* UniformID, boost::qvm::vec<float,2> value[])
+
+void Program::SetUniform2(const GLchar* UniformID, boost::qvm::vec<float,2> value[],int size)
 {
-    GLfloat lvalue[sizeof(value) *3];
-    for(int x = 0; x < sizeof(value) ; x++)
+    _useShader();
+    GLfloat lvalue[size *3];
+    for(int x = 0; x < size ; x++)
     {
         lvalue[(x*4)] = value[x].a[0];
         lvalue[(x*4)+1] = value[x].a[1];
@@ -64,13 +79,19 @@ void Program::SetUniform2(const GLchar* UniformID, boost::qvm::vec<float,2> valu
         lvalue[(x*4)+4] = value[x].a[3];
     }
 
-    glUniform4fv(glGetUniformLocation(_shader_program,UniformID),sizeof(value), lvalue);
+    glUniform2fv(glGetUniformLocation(_shader_program,UniformID),size, lvalue);
 }
 
 void Program::SetUniform3(const GLchar* UniformID, boost::qvm::vec<float,3> value)
 {
-    GLfloat lvalue[sizeof(value) *3];
-    for(int x = 0; x < sizeof(value) ; x++)
+    _useShader();
+    glUniform3fv(glGetUniformLocation(_shader_program,UniformID),1, value.a);
+}
+
+void Program::SetUniform3(const GLchar *UniformID, boost::qvm::vec<float, 3> value[],int size) {
+    _useShader();
+    GLfloat lvalue[size *4];
+    for(int x = 0; x < size ; x++)
     {
         lvalue[(x*4)] = value[x].a[0];
         lvalue[(x*4)+1] = value[x].a[1];
@@ -78,31 +99,21 @@ void Program::SetUniform3(const GLchar* UniformID, boost::qvm::vec<float,3> valu
         lvalue[(x*4)+4] = value[x].a[3];
     }
 
-    glUniform4fv(glGetUniformLocation(_shader_program,UniformID),sizeof(value), lvalue);
+    glUniform4fv(glGetUniformLocation(_shader_program,UniformID),size, lvalue);
 }
-void Program::SetUniform3(const GLchar* UniformID, boost::qvm::vec<float,3> value[])
-{
-    GLfloat lvalue[sizeof(value) *4];
-    for(int x = 0; x < sizeof(value) ; x++)
-    {
-        lvalue[(x*4)] = value[x].a[0];
-        lvalue[(x*4)+1] = value[x].a[1];
-        lvalue[(x*4)+2] = value[x].a[2];
-        lvalue[(x*4)+4] = value[x].a[3];
-    }
 
-    glUniform4fv(glGetUniformLocation(_shader_program,UniformID),sizeof(value), lvalue);
-}
 
 void Program::SetUniform4(const GLchar* UniformID, boost::qvm::vec<float,4> value)
 {
-
+    _useShader();
     glUniform4fv(glGetUniformLocation(_shader_program,UniformID),1, value.a);
 }
-void Program::SetUniform4(const GLchar* UniformID, boost::qvm::vec<float,4>value[])
+
+void Program::SetUniform4(const GLchar* UniformID, boost::qvm::vec<float,4> value[],int size)
 {
-    GLfloat lvalue[sizeof(value) *4];
-    for(int x = 0; x < sizeof(value) ; x++)
+    _useShader();
+    GLfloat lvalue[size *4];
+    for(int x = 0; x < size ; x++)
     {
         lvalue[(x*4)] = value[x].a[0];
         lvalue[(x*4)+1] = value[x].a[1];
@@ -110,11 +121,12 @@ void Program::SetUniform4(const GLchar* UniformID, boost::qvm::vec<float,4>value
         lvalue[(x*4)+4] = value[x].a[3];
     }
 
-    glUniform4fv(glGetUniformLocation(_shader_program,UniformID),sizeof(value), lvalue);
+    glUniform4fv(glGetUniformLocation(_shader_program,UniformID),size, lvalue);
 }
 
 void Program::SetMatrix4x4(const GLchar* UniformID,boost::qvm::mat<float,4,4> m)
 {
+    _useShader();
     GLfloat lvalue[16];
     lvalue[0] = m.a[0][0];
     lvalue[1] = m.a[1][0];
@@ -138,10 +150,12 @@ void Program::SetMatrix4x4(const GLchar* UniformID,boost::qvm::mat<float,4,4> m)
 
     glUniformMatrix4fv(glGetUniformLocation(_shader_program,UniformID),1,false,lvalue);
 }
-void Program::SetMatrix4x4(const GLchar* UniformID,boost::qvm::mat<float,4,4> m[])
+
+void Program::SetMatrix4x4(const GLchar* UniformID,boost::qvm::mat<float,4,4> m[],int size)
 {
-    GLfloat lvalue[sizeof(m) *16];
-    for(int x = 0; x < sizeof(m) ; x++)
+    _useShader();
+    GLfloat lvalue[size *16];
+    for(int x = 0; x < size ; x++)
     {
 
         lvalue[(x*16)] = m[x].a[0][0];
@@ -165,6 +179,12 @@ void Program::SetMatrix4x4(const GLchar* UniformID,boost::qvm::mat<float,4,4> m[
         lvalue[(x*16)+15] = m[x].a[3][3];
     }
 
-    glUniform4fv(glGetUniformLocation(_shader_program,UniformID),sizeof(m),lvalue);
+    glUniformMatrix4fv(glGetUniformLocation(_shader_program,UniformID),size, false,lvalue);
 
 }
+
+void Program::AttachSource(Source *source) {
+    glAttachShader(_shader_program,source->GetSourceID());
+}
+
+int Program::ActiveProgram = 0;

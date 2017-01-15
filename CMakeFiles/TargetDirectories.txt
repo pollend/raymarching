@@ -1,3 +1,0 @@
-/home/michaelpollind/raymarching/CMakeFiles/edit_cache.dir
-/home/michaelpollind/raymarching/CMakeFiles/rebuild_cache.dir
-/home/michaelpollind/raymarching/CMakeFiles/app.dir
