@@ -60,6 +60,7 @@ endif()
 include_directories(${Boost_INCLUDE_DIR})
 include_directories(src)
 include_directories(lib/qvm/include)
+include_directories(lib/lodepng)
 
 FILE(GLOB SRC "src/**/*.h" "src/**/*.cpp")
 

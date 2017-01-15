@@ -19,6 +19,7 @@ class Texture {
         const char* _textureName;
     public:
         Texture(const char * path);
+        Texture(unsigned int width, unsigned int height);
         ~Texture(void);
 
         /**
