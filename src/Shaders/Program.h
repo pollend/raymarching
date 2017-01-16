@@ -27,7 +27,7 @@ public:
     void BindShader();
     static void Unbind();
 
-    void SetAttrib(int index, const GLchar* attrib);
+    void SpecifyVertexAttribute(const GLchar *attrib,GLint size,GLenum type,GLboolean normalized,GLsizei stride,const void* pointer);
 
     void SetUniform1(const GLchar* UniformID, GLint value);
     void SetUniform1(const GLchar* UniformID,GLint value[],int size);

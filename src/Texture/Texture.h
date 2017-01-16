@@ -27,7 +27,7 @@ class Texture {
         **/
         const char* GetFilename();
 
-    GLuint GetResourceID();
+        GLuint GetResourceID();
 
         /**
         *returns the texcoords value minus the buffer area outside of the texture area

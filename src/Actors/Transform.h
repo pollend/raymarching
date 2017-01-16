@@ -5,20 +5,21 @@
 #include <boost/qvm/vec.hpp>
 #include <boost/qvm/mat.hpp>
 
-#ifndef _ACTOR_H
-#define _ACTOR_H
+#ifndef _TRANSFORM_H
+#define _TRANSFORM_H
 
-class Actor {
+class Transform {
 private:
-    Actor* _parent;
+    Transform* _parent;
 public:
     boost::qvm::mat<float,4,4> Local;
-    Actor();
-    void SetParent(Actor* actor);
+
+    Transform();
+    void SetParent(Transform* actor);
     boost::qvm::mat<float,4,4> GetTransform();
 
     virtual void Update(float delta);
-    virtual  void Draw(float delta);
+    virtual void Draw(float delta);
 };
 
 

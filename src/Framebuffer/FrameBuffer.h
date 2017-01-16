@@ -18,5 +18,4 @@ class FrameBuffer {
 
 };
 
-
-#endif //ASSIGMENT_3_FRAMEBUFFER_H
+#endif

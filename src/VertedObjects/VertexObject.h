@@ -15,7 +15,10 @@ class VertexObject {
         VertexObject(void);
         virtual ~VertexObject(void);
 
-        virtual void Bind() = 0;
+        virtual void Bind();
+
+        void  loadBufferData(GLfloat* data,int size);
+        void  loadBufferData(const GLfloat* data);
 };
 
 

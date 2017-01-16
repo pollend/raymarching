@@ -63,11 +63,10 @@ include_directories(lib/qvm/include)
 include_directories(lib/lodepng)
 
 FILE(GLOB SRC "src/**/*.h" "src/**/*.cpp")
-
 FILE(GLOB LODEPNG "lib/lodepng/lodepng.h" "lib/lodepng/lodepng.cpp")
 
 MESSAGE(source files: "${SRC} ${HEADER}")
 
 
-add_executable(app ./app/app.cpp ${SRC} ${LODEPNG} )
+add_executable(app ./app/app.cpp ${SRC} ${LODEPNG} src/View/View.cpp src/View/View.h)
 target_link_libraries (app ${Boost_LOG_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${OPENGL_LIBRARIES} )
