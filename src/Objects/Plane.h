@@ -32,8 +32,8 @@ public:
     Plane();
     ~Plane();
 
-    void Draw(float delta);
-    void Update(float delta);
+    void Draw();
+    void Update();
 
     void ConfigureVertexArrayObject(GLint vao,Program* program);
 };

@@ -10,6 +10,8 @@ Transform::Transform(Object* object,Program* program) {
     _object = object;
     _program = program;
 
+    boost::qvm::set_identity(Local);
+
     object->ConfigureVertexArrayObject(vao,program);
 
 }
@@ -34,9 +36,14 @@ void Transform::Update(float delta) {
 
 }
 
-void Transform::Draw(float delta,const char* key) {
+void Transform::Draw(float delta,View* view) {
+
+    _program->BindShader();
+    _program->SetMatrix4x4("in_transform",GetTransform());
+    _program->SetMatrix4x4("in_view",view->GetView());
+
     glBindVertexArray(vao);
     _object->Draw();
 
-    //Transform::object->Draw();
+
 }

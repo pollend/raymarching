@@ -13,9 +13,9 @@ Program::~Program() {
 }
 
 void Program::_useShader() {
-    if(Program::ActiveProgram == _shader_program)
-        return;
-    Program::ActiveProgram = _shader_program;
+   // if(Program::ActiveProgram == _shader_program)
+   //     return;
+   // Program::ActiveProgram = _shader_program;
     glUseProgram(_shader_program);
 }
 
@@ -186,6 +186,10 @@ void Program::SetMatrix4x4(const GLchar* UniformID,boost::qvm::mat<float,4,4> m[
 
 void Program::AttachSource(Source *source) {
     glAttachShader(_shader_program,source->GetSourceID());
+}
+
+void Program::IntalizeShader() {
+    glLinkProgram(_shader_program);
 }
 
 int Program::ActiveProgram = 0;

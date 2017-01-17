@@ -14,7 +14,8 @@ Plane::~Plane() {
     glDeleteBuffers(1,&vbo);
 }
 
-void Plane::Draw(float delta) {
+void Plane::Draw() {
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
@@ -33,7 +34,7 @@ void Plane::ConfigureVertexArrayObject(GLint vao,Program* program) {
 
 }
 
-void Plane::Update(float delta) {
+void Plane::Update() {
 
 }
 

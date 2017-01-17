@@ -6,6 +6,7 @@
 #include <boost/qvm/mat.hpp>
 #include <Objects/Object.h>
 #include <Shaders/Program.h>
+#include <View/View.h>
 
 #ifndef _TRANSFORM_H
 #define _TRANSFORM_H
@@ -25,10 +26,8 @@ public:
     void SetParent(Transform* actor);
     boost::qvm::mat<float,4,4> GetTransform();
 
-    void  AddShader(const char* key, Program* program);
-
     virtual void Update(float delta);
-    virtual void Draw(float delta,const char* key);
+    virtual void Draw(float delta,View* view);
 };
 
 

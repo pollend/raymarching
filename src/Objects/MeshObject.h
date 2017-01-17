@@ -26,14 +26,16 @@ class MeshObject : public Object{
 private:
     GLuint _vbo[2];
     enum mesh_type _type;
+    int _number_indices;
 
-    void _setup();
 public:
     ~MeshObject();
     MeshObject(VertexNormal* vn, int vertex_normal_size,GLushort* indecies, int indices_siz);
     //MeshObject(GLfloat* verts,int vert_size,GLfloat texcoords,int tex_coord_size,GLushort* indecies, int indecies_size);
 
     void ConfigureVertexArrayObject(GLint vao, Program *program);
+
+    void Draw();
 };
 
 

@@ -3,3 +3,7 @@
 //
 
 #include "View.h"
+
+boost::qvm::mat<float,4,4> View::GetView() {
+    return _view_matrix;
+}

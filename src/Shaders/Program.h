@@ -24,8 +24,10 @@ public:
 
     //void AttachSource(Source* source);
 
+    void IntalizeShader();
     void BindShader();
     static void Unbind();
+
 
     GLint GetAttrib(const GLchar* key);
 

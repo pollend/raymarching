@@ -40,7 +40,7 @@ Source::Source(const char* path)
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
 
-    char* buffer = new char[size]();
+    char* buffer = new char[size +1]();
     if (!file.read(buffer, size))
     {
         BOOST_LOG_TRIVIAL(error) << "Failed to open:" << path;
@@ -48,6 +48,7 @@ Source::Source(const char* path)
         delete(buffer);
         return;
     }
+    buffer[size] = '\0';
 
     if(!_compile(buffer))
     {
