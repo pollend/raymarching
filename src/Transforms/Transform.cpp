@@ -5,8 +5,13 @@
 #include <boost/qvm/mat_operations.hpp>
 #include <boost/qvm/map_vec_mat.hpp>
 
-Transform::Transform() {
+Transform::Transform(Object* object,Program* program) {
     _parent = NULL;
+    _object = object;
+    _program = program;
+
+    object->ConfigureVertexArrayObject(vao,program);
+
 }
 
 void Transform::SetParent(Transform* parent) {
@@ -24,10 +29,14 @@ boost::qvm::mat<float,4,4> Transform::GetTransform() {
     return  Local;
 }
 
+
 void Transform::Update(float delta) {
 
 }
 
-void Transform::Draw(float delta) {
+void Transform::Draw(float delta,const char* key) {
+    glBindVertexArray(vao);
+    _object->Draw();
 
+    //Transform::object->Draw();
 }

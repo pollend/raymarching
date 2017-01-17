@@ -4,15 +4,15 @@
 
 
 #include <GL/glew.h>
-#include <VertedObjects/VertexObject.h>
-#include "Actors/Transform.h"
+#include "Transforms/Transform.h"
+#include "Object.h"
 #include <boost/qvm/vec.hpp>
 
 
 #ifndef _PLANE_H
 #define _PLANE_H
 
-class Plane : public Transform{
+class Plane : public Object{
 public:
 
     const GLfloat _quad[24] = {
@@ -26,13 +26,16 @@ public:
             -1.0f,  1.0f,  0.0f, 1.0f
     };
 private:
-    VertexObject _vertexObject;
+    GLuint vbo;
 
 public:
     Plane();
+    ~Plane();
 
     void Draw(float delta);
     void Update(float delta);
+
+    void ConfigureVertexArrayObject(GLint vao,Program* program);
 };
 
 

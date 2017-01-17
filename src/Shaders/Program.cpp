@@ -29,13 +29,12 @@ void Program::BindShader()
     glUseProgram(0);
 }
 
-void Program::SpecifyVertexAttribute(const GLchar *attrib,GLint size,GLenum type,GLboolean normalized,GLsizei stride,const void* pointer)
-{
-    GLint posAttrib = glGetAttribLocation(_shader_program,attrib);
-    glEnableVertexAttribArray(posAttrib);
-    glVertexAttribPointer(posAttrib,size,type,normalized,stride,pointer);
 
+GLint Program::GetAttrib(const GLchar * key)
+{
+    return glGetAttribLocation(_shader_program,key);
 }
+
 
 
 void Program::SetUniform1(const GLchar* UniformID, GLint value)
